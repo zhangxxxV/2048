@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  2048
+//
+//  Created by 张欣欣 on 2017/10/9.
+//  Copyright © 2017年 zxx. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+/** 网络请求超时时间 */
+#define OUTTIME 30.0
+
+/** Masonry */
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
+/** 屏幕适配 */
+#define KWidth_Scale(number) (([UIScreen mainScreen].bounds.size.width * number) / 375)
+#define KHeight_Scale(number) (([UIScreen mainScreen].bounds.size.height * number) / 667)
+#define KScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+
+/** 颜色 */
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+/** 适配字体大小 */
+#define KFontSize(size) KScreenWidth > 375? size * (414.0 / 375.0) : (KScreenWidth == 375 ? size : (size / (375.0 / 320.0)))
+
+#define Kelement_W 15
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+
+#import "Masonry.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "SVProgressHUD.h"
+
+
+#endif /* PrefixHeader_pch */
+
